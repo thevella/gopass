@@ -468,8 +468,10 @@ func (s *Action) CompleteGenerate(c *cli.Context) {
 	}
 
 	for _, v := range list {
-		fmt.Fprintln(stdout, bashEscape(v))
+		fmt.Fprintln(stdout, v)
 	}
+
+	s.Complete(c)
 }
 
 func extractEmails(list []string) []string {

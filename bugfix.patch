@@ -1,0 +1,257 @@
+diff --git a/go.mod b/go.mod
+index e8488086..4756db8a 100644
+--- a/go.mod
++++ b/go.mod
+@@ -17,7 +17,7 @@ require (
+ 	github.com/google/go-cmp v0.5.9
+ 	github.com/google/go-github v17.0.0+incompatible
+ 	github.com/google/go-github/v33 v33.0.0
+-	github.com/gopasspw/gopass-hibp v1.15.5
++	github.com/gopasspw/gopass-hibp v1.15.6
+ 	github.com/hashicorp/golang-lru v0.5.4
+ 	github.com/jsimonetti/pwscheme v0.0.0-20220922140336-67a4d090f150
+ 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+@@ -39,8 +39,8 @@ require (
+ 	github.com/urfave/cli/v2 v2.25.7
+ 	github.com/zalando/go-keyring v0.2.3
+ 	golang.org/x/crypto v0.11.0
+-	golang.org/x/exp v0.0.0-20230728194245-b0cb94b80691
+-	golang.org/x/net v0.12.0
++	golang.org/x/exp v0.0.0-20230801115018-d63ba01acd4b
++	golang.org/x/net v0.13.0
+ 	golang.org/x/oauth2 v0.10.0
+ 	golang.org/x/sys v0.10.0
+ 	golang.org/x/term v0.10.0
+@@ -61,10 +61,11 @@ require (
+ 	github.com/fsnotify/fsnotify v1.6.0 // indirect
+ 	github.com/gdamore/encoding v1.0.0 // indirect
+ 	github.com/gdamore/tcell/v2 v2.6.0 // indirect
+-	github.com/gen2brain/shm v0.0.0-20221026125803-c33c9e32b1c8 // indirect
++	github.com/gen2brain/shm v0.0.0-20230802011745-f2460f5984f7 // indirect
+ 	github.com/godbus/dbus/v5 v5.1.0 // indirect
+ 	github.com/golang/protobuf v1.5.3 // indirect
+ 	github.com/google/go-querystring v1.1.0 // indirect
++	github.com/hashicorp/go-set v0.1.13 // indirect
+ 	github.com/hashicorp/golang-lru/v2 v2.0.4 // indirect
+ 	github.com/jezek/xgb v1.1.0 // indirect
+ 	github.com/jwalton/gchalk v1.3.0 // indirect
+diff --git a/go.sum b/go.sum
+index 4e95bde4..79cbab3f 100644
+--- a/go.sum
++++ b/go.sum
+@@ -55,6 +55,8 @@ github.com/gdamore/tcell/v2 v2.6.0/go.mod h1:be9omFATkdr0D9qewWW3d+MEvl5dha+Etb5
+ github.com/gen2brain/shm v0.0.0-20200228170931-49f9650110c5/go.mod h1:uF6rMu/1nvu+5DpiRLwusA6xB8zlkNoGzKn8lmYONUo=
+ github.com/gen2brain/shm v0.0.0-20221026125803-c33c9e32b1c8 h1:u4/UVF0sNxlqDwCptjIUTUkZW4UoZDrcHzvd2kNnF/k=
+ github.com/gen2brain/shm v0.0.0-20221026125803-c33c9e32b1c8/go.mod h1:uF6rMu/1nvu+5DpiRLwusA6xB8zlkNoGzKn8lmYONUo=
++github.com/gen2brain/shm v0.0.0-20230802011745-f2460f5984f7 h1:VLEKvjGJYAMCXw0/32r9io61tEXnMWDRxMk+peyRVFc=
++github.com/gen2brain/shm v0.0.0-20230802011745-f2460f5984f7/go.mod h1:uF6rMu/1nvu+5DpiRLwusA6xB8zlkNoGzKn8lmYONUo=
+ github.com/godbus/dbus v0.0.0-20190623212516-8a1682060722 h1:NNKZiuNXd6lpZRyoFM/uhssj5W9Ps1DbhGHxT49Pm9I=
+ github.com/godbus/dbus v0.0.0-20190623212516-8a1682060722/go.mod h1:bBOAhwG1umN6/6ZUMtDFBMQR8jRg9O75tm9K00oMsK4=
+ github.com/godbus/dbus/v5 v5.0.4/go.mod h1:xhWf0FNVPg57R7Z0UbKHbJfkEywrmjJnf7w5xrFpKfA=
+@@ -82,6 +84,10 @@ github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD
+ github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
+ github.com/gopasspw/gopass-hibp v1.15.5 h1:1FetEkk/iGAyWRlTZi708j9PkX/kl/4YqWbQO0xe9Bk=
+ github.com/gopasspw/gopass-hibp v1.15.5/go.mod h1:6Wpc5x8BvraiqjBrfa1vKtIZFP0+dfqFHlRjiZgRbA4=
++github.com/gopasspw/gopass-hibp v1.15.6 h1:D8o6EMdxDiqk7cF7bOgd3tJRQtVSscKbb4xlMA6y9AA=
++github.com/gopasspw/gopass-hibp v1.15.6/go.mod h1:lqNEqcqRrOdF18cPbfIxR/tZUmqmr1UlXcqO7+bvs8Q=
++github.com/hashicorp/go-set v0.1.13 h1:k1B5goY3c7OKEzpK+gwAhJexxzAJwDN8kId8YvWrihA=
++github.com/hashicorp/go-set v0.1.13/go.mod h1:0/D+R4MFUzJ6XmvjU7liXtznF1eQDxh84GJlhXw+lvo=
+ github.com/hashicorp/golang-lru v0.5.4 h1:YDjusn29QI/Das2iO9M0BHnIbxPeyuCHsjMW+lJfyTc=
+ github.com/hashicorp/golang-lru v0.5.4/go.mod h1:iADmTwqILo4mZ8BN3D2Q6+9jd8WM5uGBxy+E8yxSoD4=
+ github.com/hashicorp/golang-lru/v2 v2.0.4 h1:7GHuZcgid37q8o5i3QI9KMT4nCWQQ3Kx3Ov6bb9MfK0=
+@@ -176,6 +182,7 @@ github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e/go.mod h1:XV66xRDq
+ github.com/spf13/pflag v1.0.3/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
+ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
+ github.com/stretchr/objx v0.5.0 h1:1zr/of2m5FGMsad5YfcqgdqdWrIhu+EBEJRhR1U7z/c=
++github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=
+ github.com/stretchr/testify v1.1.4/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
+ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
+ github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
+@@ -192,6 +199,7 @@ github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673/go.mod h1:N3UwUGtsr
+ github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
+ github.com/zalando/go-keyring v0.2.3 h1:v9CUu9phlABObO4LPWycf+zwMG7nlbb3t/B5wa97yms=
+ github.com/zalando/go-keyring v0.2.3/go.mod h1:HL4k+OXQfJUWaMnqyuSOc0drfGPX2b51Du6K+MRgZMk=
++go.uber.org/atomic v1.7.0/go.mod h1:fEN4uk6kAWBTFdckzkM89CLk9XfWZrxpCo0nPH17wJc=
+ go.uber.org/multierr v1.11.0 h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=
+ go.uber.org/multierr v1.11.0/go.mod h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=
+ golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
+@@ -203,6 +211,8 @@ golang.org/x/crypto v0.11.0 h1:6Ewdq3tDic1mg5xRO4milcWCfMVQhI4NkqWWvqejpuA=
+ golang.org/x/crypto v0.11.0/go.mod h1:xgJhtzW8F9jGdVFWZESrid1U1bjeNy4zgy5cRr/CIio=
+ golang.org/x/exp v0.0.0-20230728194245-b0cb94b80691 h1:/yRP+0AN7mf5DkD3BAI6TOFnd51gEoDEb8o35jIFtgw=
+ golang.org/x/exp v0.0.0-20230728194245-b0cb94b80691/go.mod h1:FXUEEKJgO7OQYeo8N01OfiKP8RXMtf6e8aTskBGqWdc=
++golang.org/x/exp v0.0.0-20230801115018-d63ba01acd4b h1:r+vk0EmXNmekl0S0BascoeeoHk/L7wmaW2QF90K+kYI=
++golang.org/x/exp v0.0.0-20230801115018-d63ba01acd4b/go.mod h1:FXUEEKJgO7OQYeo8N01OfiKP8RXMtf6e8aTskBGqWdc=
+ golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod h1:jJ57K6gSWd91VN4djpZkiMVwK6gcyfeH4XE8wZrZaV4=
+ golang.org/x/mod v0.8.0/go.mod h1:iBbtSCu2XBx23ZKBPSOrRkjjQPZFPuis4dIYUhu/chs=
+ golang.org/x/net v0.0.0-20190311183353-d8887717615a/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
+@@ -217,6 +227,8 @@ golang.org/x/net v0.6.0/go.mod h1:2Tu9+aMcznHK/AK1HMvgo6xiTLG5rD5rZLDS+rp2Bjs=
+ golang.org/x/net v0.8.0/go.mod h1:QVkue5JL9kW//ek3r6jTKnTFis1tRmNAW2P1shuFdJc=
+ golang.org/x/net v0.12.0 h1:cfawfvKITfUsFCeJIHJrbSxpeu/E81khclypR0GVT50=
+ golang.org/x/net v0.12.0/go.mod h1:zEVYFnQC7m/vmpQFELhcD1EWkZlX69l4oqgmer6hfKA=
++golang.org/x/net v0.13.0 h1:Nvo8UFsZ8X3BhAC9699Z1j7XQ3rsZnUUm7jfBEk1ueY=
++golang.org/x/net v0.13.0/go.mod h1:zEVYFnQC7m/vmpQFELhcD1EWkZlX69l4oqgmer6hfKA=
+ golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be/go.mod h1:N/0e6XlmueqKjAGxoOufVs8QHGRruUQn6yWY3a++T0U=
+ golang.org/x/oauth2 v0.10.0 h1:zHCpF2Khkwy4mMB4bv0U37YtJdTGW8jI0glAApi0Kh8=
+ golang.org/x/oauth2 v0.10.0/go.mod h1:kTpgurOux7LqtuxjuyZa4Gj2gdezIt/jQtGnNFfypQI=
+diff --git a/internal/action/completion.go b/internal/action/completion.go
+index c2158ced..07096082 100644
+--- a/internal/action/completion.go
++++ b/internal/action/completion.go
+@@ -11,30 +11,11 @@ import (
+ 	"github.com/gopasspw/gopass/internal/out"
+ 	"github.com/gopasspw/gopass/internal/tree"
+ 	"github.com/gopasspw/gopass/pkg/ctxutil"
++	"github.com/hashicorp/go-set"
+ 	"github.com/urfave/cli/v2"
++	"golang.org/x/exp/slices"
+ )
+ 
+-var escapeRegExp = regexp.MustCompile(`('|"|\s|\(|\)|\<|\>|\&|\;|\#|\\|\||\*|\?)`)
+-
+-// bashEscape Escape special characters with `\`.
+-func bashEscape(s string) string {
+-	return escapeRegExp.ReplaceAllStringFunc(s, func(c string) string {
+-		if c == `\` {
+-			return `\\\\`
+-		}
+-
+-		if c == `'` {
+-			return `\\\` + c
+-		}
+-
+-		if c == `"` {
+-			return `\\\` + c
+-		}
+-
+-		return `\\` + c
+-	})
+-}
+-
+ // Complete prints a list of all password names to os.Stdout.
+ func (s *Action) Complete(c *cli.Context) {
+ 	ctx := ctxutil.WithGlobalFlags(c)
+@@ -49,8 +30,34 @@ func (s *Action) Complete(c *cli.Context) {
+ 		return
+ 	}
+ 
++	// Store paths in a set since there can be multiples
++	outs := set.New[string](20)
++
++	// Remove quoting
++	re := regexp.MustCompile(`\\(.)`)
++	in := re.ReplaceAllString(c.Args().First(), `$1`)
++
++	lst := strings.Split(in, "/")
++
+ 	for _, v := range list {
+-		fmt.Fprintln(stdout, bashEscape(v))
++		if strings.HasPrefix(v, in) {
++			v_split := strings.Split(v, "/")
++
++			out := strings.Join(v_split[:len(lst)], "/")
++
++			if len(v_split) > len(lst) {
++				out += "/"
++			}
++
++			outs.Insert(out)
++		}
++	}
++
++	var outs_lst = outs.Slice()
++	slices.Sort(outs_lst)
++
++	for _, v := range outs_lst {
++		fmt.Fprintln(stdout, v)
+ 	}
+ }
+ 
+@@ -81,19 +88,29 @@ set -A complete_gopass -- $PASS_LIST %s
+ // CompletionBash returns a bash script used for auto completion.
+ func (s *Action) CompletionBash(c *cli.Context) error {
+ 	out := `_gopass_bash_autocomplete() {
+-     local cur opts base
+-     COMPREPLY=()
+-     cur="${COMP_WORDS[COMP_CWORD]}"
+-     opts=$( ${COMP_WORDS[@]:0:$COMP_CWORD} --generate-bash-completion )
+-     local IFS=$'\n'
+-     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+-     return 0
+- }
++	local cur opts base
++	COMPREPLY=()
++	
++	cur="${COMP_WORDS[COMP_CWORD]}"
++	opts=$( ${COMP_WORDS[@]:0:$COMP_CWORD}  "${cur}"  --generate-bash-completion )
++	local IFS=$'\n'
++
++	COMPREPLY=( $( compgen -W "${opts}" -- "${cur}" ) )
++
++	if [ ${#COMPREPLY[@]} -eq 1 ]; then
++		if [ "${COMPREPLY[0]: -1}" != "/" ]; then
++			compopt +o nospace
++		fi
++	fi
++
++	return 0
++}
++	
+ 
+ `
+-	out += "complete -F _gopass_bash_autocomplete " + s.Name
++	out += "complete -o filenames -F _gopass_bash_autocomplete -o nospace -o nosort " + s.Name
+ 	if runtime.GOOS == "windows" {
+-		out += "\ncomplete -F _gopass_bash_autocomplete " + s.Name + ".exe"
++		out += "\ncomplete -o filenames -F _gopass_bash_autocomplete -o nospace -o nosort " + s.Name + ".exe"
+ 	}
+ 	fmt.Fprintln(stdout, out)
+ 
+diff --git a/internal/action/completion_test.go b/internal/action/completion_test.go
+index cb0e864b..11ba0270 100644
+--- a/internal/action/completion_test.go
++++ b/internal/action/completion_test.go
+@@ -14,29 +14,6 @@ import (
+ 	"github.com/urfave/cli/v2"
+ )
+ 
+-func TestBashEscape(t *testing.T) {
+-	t.Run("bash escape", func(t *testing.T) {
+-		expected := `a\\<\\>\\|\\\\and\\ sometimes\\?\\*\\(\\)\\&\\;\\#`
+-		if escaped := bashEscape(`a<>|\and sometimes?*()&;#`); escaped != expected {
+-			t.Errorf("Expected %q, but got %q", expected, escaped)
+-		}
+-	})
+-
+-	t.Run("bash escape single quote", func(t *testing.T) {
+-		expected := `good\\ ol\'\\ days`
+-		if escaped := bashEscape(`good ol' days`); escaped != expected {
+-			t.Errorf("Expected %q, but got %q", expected, escaped)
+-		}
+-	})
+-
+-	t.Run("bash escape double quote", func(t *testing.T) {
+-		expected := `my\\ \\\"bad\\\"\\ password`
+-		if escaped := bashEscape(`my "bad" password`); escaped != expected {
+-			t.Errorf("Expected %q, but got %q", expected, escaped)
+-		}
+-	})
+-}
+-
+ func TestComplete(t *testing.T) {
+ 	u := gptest.NewUnitTester(t)
+ 
+diff --git a/internal/action/generate.go b/internal/action/generate.go
+index 4a0439e0..586c6a9f 100644
+--- a/internal/action/generate.go
++++ b/internal/action/generate.go
+@@ -468,8 +468,9 @@ func (s *Action) CompleteGenerate(c *cli.Context) {
+ 	}
+ 
+ 	for _, v := range list {
+-		fmt.Fprintln(stdout, bashEscape(v))
++		fmt.Fprintln(stdout, v)
+ 	}
++	s.Complete(c)
+ }
+ 
+ func extractEmails(list []string) []string {
