@@ -73,6 +73,8 @@ github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 h1:El6M4kTTCOh6aBiKaU
 github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510/go.mod h1:pupxD2MaaD3pAXIBCelhxNneeOaAeabZDe5s4K6zSpQ=
 github.com/gopasspw/gopass-hibp v1.15.14 h1:2FoUREfJNQTV0Thrnl9WABjODDGpCqaI1s9vMzYLly8=
 github.com/gopasspw/gopass-hibp v1.15.14/go.mod h1:xVz4578yPIX+RQQwG0l5VDaE9s+9eMyHzVOcN1NvelI=
+github.com/hashicorp/go-set v0.1.14 h1:ZU7JyS6QGueDuXYldjcuyKLR0XV14eOKcsQlGddXGgA=
+github.com/hashicorp/go-set v0.1.14/go.mod h1:FH9zJxnQYHPlZ7j9JaoQjZOFPBStOrelKOE11Wjwirc=
 github.com/hashicorp/golang-lru/v2 v2.0.7 h1:a+bsQ5rvGLjzHuww6tVxozPZFVghXaHOwFs4luLUK2k=
 github.com/hashicorp/golang-lru/v2 v2.0.7/go.mod h1:QeFd9opnmA6QUJc5vARoKUSoFhyfM2/ZepoAG6RGpeM=
 github.com/hashicorp/hcl v1.0.0 h1:0Anlzjpi4vEasTeNFn2mLJgTSwt0+6sfsiTG8qcWGx4=
